@@ -1,4 +1,4 @@
-ci - merge different part of code continuosly , commit->automated build->integration , jenkis
+ci - merge different part of code continuosly into a single branch, commit->automated build->integration , jenkis
 cdel - keep code ready fo deploymeny, build -> automated tests -> manual tests -> ready 
 cdep -> deployment to end users, practice of deploying small changes to end users, instagram 
 infrastructure as a code - managing infrastrcuture as a code , code infrastructure requirements->stored in code file
