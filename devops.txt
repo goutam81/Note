@@ -1,0 +1,12 @@
+ci - merge different part of code continuosly , commit->automated build->integration , jenkis
+cdel - keep code ready fo deploymeny, build -> automated tests -> manual tests -> ready 
+cdep -> deployment to end users, practice of deploying small changes to end users, instagram 
+infrastructure as a code - managing infrastrcuture as a code , code infrastructure requirements->stored in code file
+				->store in source contorl on a server ->run the file. example : code file to create 
+				instance of new server or shift to a new server. earlier this was manual and was 
+				tedius, with code everything is automated.
+		earlier methods : either use manual process , or use cloud and GUI interface.
+configuration management - a part of infrastructure as a code example: software pacakge\, configuration management tool
+monitoring : collect data and present it in a pictorial format , in devops used to monitor performance of various
+		services in infrastructure. uses : troubleshooting , website performance tracking
+		
