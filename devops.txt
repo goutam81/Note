@@ -6,11 +6,27 @@ infrastructure as a code - managing infrastrcuture as a code , code infrastructu
 				instance of new server or shift to a new server. earlier this was manual and was 
 				tedius, with code everything is automated.
 		earlier methods : either use manual process , or use cloud and GUI interface.
-configuration management - a part of infrastructure as a code example: software pacakge\, configuration management tool
+configuration management - a part of infrastructure as a code example: software pacakges installation on multiple servers
+				, code is stored on server -> called configuration management tool
 monitoring : collect data and present it in a pictorial format , in devops used to monitor performance of various
 		services in infrastructure. uses : troubleshooting , website performance tracking
+		monitoring types : infrastructural monitoring ex: cpu usage, network speed , memory usage. tools used : sensu, appdynamics
+				   application performance monitoring (APM) : performance of apps ex: response time of app
+					app logs. tools used : ex : appdynamics,elastic stack
 microservices : small parts of a huge program. Split the program into small parts. example : in ecommerce application
 		cart, payment part, wishlist, authentication part, shopping, cuat detail etc.
 		These microservices can be run on multiple nodes and need not but coded with the same programming 
 		language. Microservices communicate with each other using standardised api.
 		microservices make the project modular, as different parts are loosely coupled
+build tool : gradle
+ci tool : jenkins
+cm tools : ansible, puppet chef , saltstack, 
+		ansible, puppet, saltstack -> declaritive approach(you tell which state the machine has to be
+		and the tool will decide what to do to bring the machine in that state)
+		chef ->. prodecural approach( you write scripts to bring machine in that state)
+		ansible and saltstack uses yaml
+
+didtn understand:
+
+containarization
+orchestration
