@@ -1,0 +1,84 @@
+git hash-object --<filename>  -w, use with echo
+git hash-object --stdin  -w, use with echo
+ex :
+$ git hash-object ../devops.txt(this is a file name) -w
+$ echo "hi" | git hash-object --stdin -w
+---------------------------------------------------------------------------------------
+hash is one way function. 
+multiple length input to hash function same length out put
+same input same hash
+some hash function used: MD1(128 bit), SHA1(160bit), SHA256(256bit), SHA384(384 bit), SHA512(512 bit)
+git uses sha1 hash(128bit output)
+
+"shasum" command -> generate sha1 hash of input, use with echo
+
+example:
+
+$ echo "hello" | shasum
+f572d396fae9206628714fb2ce00f72e94f2258f *-
+
+$ echo -n "hello" | shasum (removes line break which is added by default by echo command)
+aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d *-
+-------------------------------------------------------------------------------------
+git cat-file -<> hashcode : read contents of git object  
+
+example:
+
+$ git cat-file -t(type) 1385f264afb75a56a5bec74243be9b367ba4ca08
+blob
+
+$ git cat-file -s(size) 1385f264afb75a56a5bec74243be9b367ba4ca08
+4
+
+$ git cat-file -p(contents) 1385f264afb75a56a5bec74243be9b367ba4ca08
+hey
+--------------------------------------------------------------------------------------
+create a file using echo command and pipeline:
+example:
+$ echo "hello" > new.txt
+---------------------------------------------------------------------------------------
+git calculates hash using contents of the file
+git object structure looks like this:
+ objectType+<space>+ size of file+ delimiter used + contents of file
+
+example:
+
+$ echo "hey" | git hash-object --stdin
+1385f264afb75a56a5bec74243be9b367ba4ca08
+
+$ echo -e "blob 4\0hey" | shasum
+1385f264afb75a56a5bec74243be9b367ba4ca08 *-
+
+-e option with echo is used to interpret escape characters
+
+blobs dont store filename
+it consistes the object type , size, delimiter and contents of the file, and the hash is generates using this 
+content . this hash is used as object name.
+
+object structure in git is "object type + space + object size+ delimiter + contents
+
+a git tree stores blobs and other trees, much like a folder/directory.
+
+git trees stores file name . so this is the reason why blobs dont store file name
+
+git tree arranges the contents in the following formar
+
+<file/tree permissions> <object type> <hash of the object> <file/directory name>
+
+--------------------------------------------------------------------------------------
+git mktree : create a tree object
+
+a tree object stores data in the following format
+<permission> <object type> <object hash> <tab> <filename>
+
+$ cat ../tree.txt  | git mktree
+2737a256a5fbd0d4f5e44231498446798112b37b
+--------------------------------------------------------------------------------------
+use git read-tree command to read tree from git repo and move to staging area
+$ git read-tree 2737a(hash of tree)
+---------------------------------------------------------------------------------------
+see contents of staging area using ls-files command
+$ git ls-files
+file1.txt
+file2.txt
+----------------------------------------------------------------------------------------
