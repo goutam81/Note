@@ -82,3 +82,26 @@ $ git ls-files
 file1.txt
 file2.txt
 ----------------------------------------------------------------------------------------
+a git commit is a wrapper around tree object
+a commit holds a pointer to a tree object
+on commit , git creates a tree from the contents of stageing area and the hash of this tree is stored in a 
+commit.
+a commit stores the current snapshot of the working directory
+
+example: $ git commit -m "reversrKT_commit_1"
+--------------------------------------------------------------------------
+			-------------------
+			git basic commands
+			-------------------
+
+git status : current state of the git repository
+git add <filename> : add files to staging area
+git log : get log of all the commits done / history of commits
+git checkout <commit object hash> : checkout specific commit
+
+the keyword master points to the most recent commit.
+so 
+a command like "git checkout master" will check out the most recent commit
+
+---------------------------------------------------------------------------
+
