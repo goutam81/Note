@@ -104,4 +104,4 @@ so
 a command like "git checkout master" will check out the most recent commit
 
 ---------------------------------------------------------------------------
-
+---
